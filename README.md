@@ -30,3 +30,10 @@ The input is narrowed to IEEE-754 single precision before the bit-hack runs. The
 - `INV_SQRT_MAGIC: number` — the magic constant `0x5F3759DF`.
 - `ERROR_DOMAIN: string` — message for `x <= 0`.
 - `ERROR_NON_FINITE: string` — message for `NaN` / `±Infinity` / non-number inputs.
+
+## Design notes
+
+The window stores values eagerly rather than keeping running aggregates. Running
+sums drift with floating point over long streams, and recomputing from a small
+buffer is cheap enough that the drift is not worth the speed.
+
