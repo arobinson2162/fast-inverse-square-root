@@ -1,6 +1,6 @@
 {
   "name": "fast-inverse-square-root",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Computes an approximate reciprocal square root of a 32-bit float using the Quake III bit-hack with one Newton iteration.",
   "type": "module",
   "main": "src/index.js",
